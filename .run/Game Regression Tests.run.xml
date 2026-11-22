@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="游戏回归测试" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="studio.lastlight.GameTests" />
+    <option name="VM_PARAMETERS" value="-Djava.awt.headless=true" />
+    <module name="neon-last-light" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <method v="2"><option name="Make" enabled="true" /></method>
+  </configuration>
+</component>

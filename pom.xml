@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>studio.lastlight</groupId><artifactId>neon-last-light</artifactId><version>2.0.0</version>
+  <name>霓虹：最后的光</name>
+  <description>完整可玩的离线生存射击游戏与 Java 学习项目。</description>
+  <properties><maven.compiler.release>21</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>
+  <build><plugins>
+    <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.14.0</version></plugin>
+    <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId><version>3.4.2</version><configuration><archive><manifest><mainClass>studio.lastlight.Main</mainClass></manifest></archive></configuration></plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId><artifactId>maven-antrun-plugin</artifactId><version>3.1.0</version>
+      <executions><execution><id>game-regression-tests</id><phase>test</phase><goals><goal>run</goal></goals>
+        <configuration><target><java classname="studio.lastlight.GameTests" fork="true" failonerror="true" dir="${project.basedir}">
+          <classpath refid="maven.test.classpath"/><jvmarg value="-Djava.awt.headless=true"/><jvmarg value="-Dstdout.encoding=UTF-8"/><jvmarg value="-Dstderr.encoding=UTF-8"/>
+        </java></target></configuration>
+      </execution></executions>
+    </plugin>
+  </plugins></build>
+</project>
